@@ -5,9 +5,21 @@ var ctx = canvas.getContext('2d');
 var imageData = ctx.getImageData(0, 0, canvasWidth, canvasHeight);
 var data = imageData.data;
 
-var maxIter = 100;
-var zoomLevel = 2;
-var xOffset = 0;
+var slider = document.getElementById("iterSlider");
+document.getElementById("btnReset").onclick = reset;
+
+function reset() {
+  maxIter = slider.value;
+  zoomLevel = 1.2;
+  xOffset = -0.5;
+  yOffset = 0;
+  draw();
+}
+
+
+var maxIter = 50;
+var zoomLevel = 1.2;
+var xOffset = -0.5;
 var yOffset = 0;
 var zoomSpeed = 1.6;
 var movingSpeed = 0.4;
@@ -44,7 +56,7 @@ var draw = function() {
         x = nextX;
         y = nextY;
 
-        if(x + y > 10) { break; }
+        if(x + y > 50) { break; }
       }
       
       if(currentIter == maxIter) {
