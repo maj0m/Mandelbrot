@@ -87,15 +87,9 @@ window.onkeypress = function(event) {
   }
 
   draw();
-  ctx.stroke();
+ 
 }
 
- function storeGuess(event) {
-    var x = event.offsetX;
-    var y = event.offsetY;
-    ctx.arc(x, y, 5, 0, 2 * Math.PI);
-    ctx.strokeStyle = "red";
-    ctx.stroke();
-}
+
 
 
